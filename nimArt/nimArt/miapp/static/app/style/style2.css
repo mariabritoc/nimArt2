@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d-flex {
+  position: absolute;
+  right: 20px;
+}
+
+.breadcrumb {
+  color: #4a4a4a;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 60px 30px;
+  margin-top: 60px;
+}
+
+.collection_sidebar {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+
+#swal2-title {
+  font-family: inherit;
+}
+
+/*CAMBIA EL FONDO DE LA SWEET ALERT*/
+.swal2-popup {
+  background-color: #fff;
+}
+
+button.swal2-confirm.swal2-styled {
+  background-color: rgb(223, 189, 17);
+}
+
+.swal2-actions {
+  background-color: rgb(244, 204, 6)00;
+}
+
+div.swal2-deny.swal2-styled {
+  background-color: rgb(244, 204, 6)00;
+}
+
+div.swal2-cancel.swal2-styled {
+  background-color: rgb(244, 204, 6)00;
+}
+
+
+/* FORMULARIO*/
+
+/*ANIMACION FORMULARIO*/
+.jello-horizontal {
+  animation: jello-horizontal .9s linear both
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1)
+  }
+
+  30% {
+    transform: scale3d(1.25, .75, 1)
+  }
+
+  40% {
+    transform: scale3d(.75, 1.25, 1)
+  }
+
+  50% {
+    transform: scale3d(1.15, .85, 1)
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1)
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1)
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+
+
+
+
+.form {
+  background-image: url(../imagenes/lienzofinal.jpg);
+  background-position: center;
+  width: 90%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  max-width: 400px;
+  border-radius: 1em;
+  padding: 3.5em 1.5em;
+}
+
+
+.form__container {
+  width: 100%;
+  display: grid;
+  gap: .5em;
+  grid-auto-columns: 100%
+}
+
+.form__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: .4rem;
+}
+
+.form__input {
+  font-family: inherit;
+  font-size: .8rem;
+  /*.8REM es igual a 16px*/
+  /*es relativo al tamaño de fuente o del padre en este caso es igual a 16px*/
+  padding: .8em 1em;
+  outline: none;
+  border: none;
+  border: 1px solid #bbb0b0;
+  border-radius: 0.2emp;
+}
+
+.form__input:hover {
+  cursor: pointer;
+  border-color: yellow;
+
+}
+
+
+
+
+label {
+  padding-top: 8px;
+  font-size: 15px;
+}
+
+.errores {
+  display: none;
+  font-size: 14px;
+  color: red;
+  font-size: 10px;
+  position: inherit;
+}
+
+
+.form__input--message {
+  resize: none;
+  padding: 1.8em 1em;
+  margin-bottom: .5em;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+  outline: none;
+  border: none;
+  border: 1px solid #bbb0b0;
+  border-radius: 0.2emp;
+}
+
+textarea:hover {
+  cursor: pointer;
+  border-color: yellow;
+}
+
+
+
+
+.form__cta {
+  font-family: inherit;
+  font-size: 16px;
+  background-image: url(../imagenes/lienzonegro.jpg);
+  color: #fff;
+  border: none;
+  font-weight: 300;
+  padding: .7em 0;
+  border-radius: .2em;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+
+
+
+.logo {
+  height: 50px;
+  width: 60px;
+}
+
+.logo2 {
+  height: 80px;
+  width: auto;
+}
+
+
+/*Links*/
+.link2 {
+  color: #4a4a4a;
+  text-decoration: none;
+  /*quitar subrayado link*/
+}
+
+.link3 {
+  color: white;
+  text-decoration: none;
+}
+
+hr {
+  color: black;
+}
+
+/*RESPONSIVA*/
+@media (max-width:450) {
+  .form {
+    padding: 3.5em 1em;
+  }
+}
+/*
+@media  (max-width: 768px) {
+  #tiform {
+    font-size: 1.5em; 
+  }
+}*/
+
+html {
+  height: 100%;
+}

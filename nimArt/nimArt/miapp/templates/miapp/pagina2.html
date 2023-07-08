@@ -1,0 +1,100 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style1.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <h1>Esculturas</h1>
+        <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+        <span aria-hidden="true" class="breadcrumb__sep">/</span>
+        <span>Esculturas</span>
+    </nav>
+
+    <div class="collection_sidebar"></div>   
+        
+
+        <div class="collage">
+            <div class="collage-item; ayuda">
+                
+                {% load static %}
+                <img class="wau" src="{% static 'app/imagenes/escultura1.jpg' %}" alt="Imagen 1" onclick="openModal('modal1')">
+                <div  id="modal1" class="modal">
+                    {% load static %}
+                    <img class="modal-content" src="{% static 'app/imagenes/escultura1.jpg' %}">
+                </div>
+                <div class="desc">Sparrow</div>
+        
+            </div>
+
+            <div class="collage-item; ayuda">
+            
+                {% load static %}
+            <img class="wau" src="{% static 'app/imagenes/escultura2.jpg' %}" alt="Imagen 2" onclick="openModal('modal2')">
+                <div  id="modal2" class="modal">
+                    {% load static %}
+                <img class="modal-content" src="{% static 'app/imagenes/escultura2.jpg' %}">
+                </div>
+                <div class="desc">Crow I</div>
+        
+            </div>
+
+            <div class="collage-item; ayuda">
+            
+                {% load static %}
+            <img class="wau" src="{% static 'app/imagenes/escultura8.jpg' %}" alt="Imagen 3" onclick="openModal('modal3')">
+                <div  id="modal3" class="modal">
+                    {% load static %}
+                <img class="modal-content" src="{% static 'app/imagenes/escultura8.jpg' %}">
+                </div>
+                <div class="desc">Structure Biomorphique</div>
+        
+            </div>
+
+            <div class="collage-item; ayuda">
+
+                {% load static %}
+            <img class="wau" src="{% static 'app/imagenes/escultura9.jpg' %}" alt="Imagen 4" onclick="openModal('modal4')">
+                <div  id="modal4" class="modal">
+                    {% load static %}
+                <img class="modal-content" src="{% static 'app/imagenes/escultura9.jpg' %}">
+                </div>
+                <div class="desc">Madama</div>
+        
+            </div>
+
+            <div class="collage-item; ayuda">
+            
+                {% load static %}
+            <img class="wau" src="{% static 'app/imagenes/escultura5.jpg' %}" alt="Imagen 5" onclick="openModal('modal5')">
+                <div  id="modal5" class="modal">
+                    {% load static %}
+                <img class="modal-content" src="{% static 'app/imagenes/escultura5.jpg' %}">
+                </div>
+                <div class="desc">Deer owl III</div>
+        
+            </div>
+
+            <div class="collage-item; ayuda">
+            
+                {% load static %}
+            <img class="wau" src="{% static 'app/imagenes/escultura10.jpg' %}" alt="Imagen 6" onclick="openModal('modal6')">
+                <div  id="modal6" class="modal">
+                    {% load static %}
+                <img class="modal-content" src="{% static 'app/imagenes/escultura10.jpg' %}">
+                </div>
+                <div class="desc">Nude VI</div>
+        
+            </div>
+
+    </div>
+
+    <script src="{% static 'app/javascript/script2.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/*posicionando boton buscar*/
+.d-flex {
+  position: absolute;
+  right: 20px;
+}
+
+.nav-link {
+  font-family: inherit;
+}
+
+html {
+  height: 100;
+  
+}
+
+.logo{
+  height: 50px;
+  width: 60px;
+}
+
+.logo2{
+  height: 80px;
+  width: auto;
+}
+
+/* stilo de caja NO SE ESTA USANDO
+.box {
+  border: 5px solid #ffc107;
+  height: auto;
+  width: 30%;
+  margin: 10%;
+  padding: 10%;
+  margin-left: 10%;
+  float: left;
+
+}*/
+
+/*Estilos nav secundario*/
+
+.breadcrumb {
+  color: #4a4a4a;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 60px 30px;
+  margin-top: 60px;
+}
+
+ /*quitar subrayado link*/
+.link2{
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+.collection_sidebar {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+/* estilos texto y videos*/
+
+
+.container {
+  width: 100%;
+  height: auto;
+  /*text-align: center;*/
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.container h3 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.container p {
+  text-align: justify-all;
+  margin-top: 10px;
+  font-size: 0.9em;
+  margin: 10px;
+}
+
+/*dimensiones en base al id del video*/
+#vid1 {
+  width: 100%;
+  max-width: 630px;
+  float: right;
+  margin: 20px;
+}
+
+#vid2 {
+  width: 100%;
+  max-width: 630px;
+  float: left;
+  margin: 20px;
+}
+
+
+/*para ser responsivo, dando las dimensiones*/
+
+@media (max-width: 414px) {
+
+  #vid1,
+  #vid2 {
+    float: none;
+    width: 250px;
+    height: 150px;
+    align-items: center;
+  }
+  .container p{
+    font-size: 18px;
+  }
+
+}
+
+
+/* LINK FOOTER*/
+.link3{
+    color: white;
+    text-decoration: none; /*quitar subrayado link*/
+  }
+
+  hr{
+    color: black;
+  }

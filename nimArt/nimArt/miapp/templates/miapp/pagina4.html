@@ -1,0 +1,95 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style3.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+
+
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <h1>Arte</h1>
+        <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+        <span aria-hidden="true" class="breadcrumb__sep">/</span>
+        <span>Mas arte</span>
+    </nav>
+
+    <div class="collection_sidebar">
+    </div>
+
+    <section>
+        <!--video-->
+        <div class="container">
+            <div>
+                <h1>
+                    El arte de la ceramica
+
+                </h1>
+                <h3>
+                    ¿Que es la ceramica?
+                </h3>
+                <div>
+                    <center><video id="vid1" autoplay muted controls>
+                        {% load static %}
+                            <source src="{% static 'app/video/Desirée De Ridder_ artista ceramista _ Creadores.mp4' %}"
+                                type="video/mp4">
+                        </video></center>
+                </div>
+                <p>
+                    <br> <br><br>
+                    La cerámica es el arte de fabricar objetos elaborados con arcilla cocida. La arcilla es una roca
+                    sedimentaria, constituida por agregados de silicatos de aluminio hidratados, de color blanco cuando
+                    es pura y varía de color según las impurezas que contenga.
+
+                    Este arte es uno de los inventos más importantes de la humanidad. Poder almacenar y transportar
+                    productos, especialmente líquidos, fue una gran revolución. Por ser un material perdurable, está
+                    íntimamente relacionada con la evolución del ser humano, puede aportar datos sobre un pueblo
+                    determinado, grado de civilización, costumbres, religión, economía, contactos comerciales… Sirve de
+                    testimonio para conocer las características de cualquier cultura.
+                    <br><br><br><br><br><br><br>
+                </p>
+            </div>
+
+            <div>
+                <h1>
+                    El arte de la Ofebreria
+                    <br>
+                </h1>
+
+                <h3>
+                    ¿Que es la ofebreria?
+                </h3>
+
+                <div>
+                    {% load static %}
+                    <center><video id="vid2" muted controls>
+                            <source src="{% static 'app/video/Orfebrería, el arte de los metales.mp4' %}" type="video/mp4">
+                        </video></center>
+                </div>
+                <p>
+                    <br>
+                    Son los procesos involucrados en la fundición, forja, repujado, labrado, martillado y en otras
+                    técnicas que son usadas para la fabricación de piezas en hierro, plata, cobre, bronce, oro y
+                    aleaciones de diferentes materiales que permiten la realización de diversos objetos. Aquellos que se
+                    encuentran ligados a las culturas originarias -principalmente Mapuche y Aymara- tienen fines
+                    simbólicos y decorativos. Los de tradición hispana son más bien de carácter funcional y
+                    contemporáneo. En la zona altiplánica de Isluga, es tradicional el trabajo de repujado y labrado en
+                    plata para fabricar piezas como complemento al vestuario Aymara tradicional: aros o zarcillos de
+                    plata con cuentas de loza roja y tupus de cucharas labradas que servían a la vestimenta femenina,
+                    entre otros. Los pueblos de la cultura Mapuche aprovechan monedas para crear joyas además de platos,
+                    vajillas y mates. En su orfebrería tradicional sobreviven sus expresiones más tradicionales En el
+                    ámbito contemporáneo estas técnicas son principalmente usadas para crear
+                    objetos con fines decorativos que incluyen elementos de innovación, y en el entorno urbano, para la
+                    fabricación de piezas complementarias al vestuario, así como para la elaboración de joyas y
+                    accesorios.
+                    <br><br><br><br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

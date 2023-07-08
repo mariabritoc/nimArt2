@@ -1,0 +1,92 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/stylelogin.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+  <!--NAV SECUNDARIO-->
+
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <h1>Contáctanos</h1>
+    <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+    <span aria-hidden="true" class="breadcrumb__sep">/</span>
+    <span>Contáctanos</span>
+  </nav>
+
+  <div class="collection_sidebar">
+  </div>   
+
+  <main>
+    <div class="contenedor__todo">
+      <div class="caja__trasera">
+        <div class="caja__trasera-login">
+          <h3>¿Ya tienes una cuenta?</h3>
+          <p>Inicia sesión para entrar a <img src="{%  static 'imagenes/logonegro.png' %}" href="#" alt="Logo de Mi Sitio Web" class="logo"></p>
+          <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+        </div>
+        <div class="caja__trasera-register">
+          <h3>¿Aún no tienes una cuenta?</h3>
+          <p>Regístrate para que puedas iniciar sesión</p>
+          <a href="{% url 'registro' %}">
+            <button>Regístrarse</button>
+          </a>
+        </div>
+      </div>
+
+      <!--Formulario de Login y registro-->
+      <div class="contenedor__login-register">
+        <!--Login-->
+        <form action="#" method="POST" id="formlogin" class="formulario__login">
+          <h2>Iniciar Sesión</h2>
+          {%csrf_token%}
+          {{ form }}
+                <button type="submit" id="btnlogin">Entrar</button>
+        </form>
+
+        <!--Register-->
+        <form action="#" method="POST" id="formregistro" class="formulario__register">
+          <h2>Regístrarse</h2>
+
+          <input type="text" id="rnombre" placeholder="Nombre completo">
+          <div id="mensaje3" class="errores">
+            <b class="tracking-in-contract">*Ingresa un nombre (solo letras y espacios)</b>
+          </div>
+          <input type="email" id="remail" placeholder="Correo Electronico">
+          <div id="mensaje4" class="errores">
+            <b class="tracking-in-contract">*Ingresa un email correcto</b>
+          </div>
+          <input type="text" id="ruser" placeholder="Usuario">
+          <div id="mensaje5" class="errores">
+            <b class="tracking-in-contract">*Campo usuario vacio</b>
+          </div>
+          <input type="password" id="rpassword" placeholder="Contraseña">
+          <div id="mensaje6" class="errores">
+            <b class="tracking-in-contract">*Campo contraseña vacio</b>
+          </div>
+
+          <button type="submit" id="btnregistro">Regístrarse</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <!--API-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{% static 'app/javascript/login.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+
+</html>
+
+{% endblock %}

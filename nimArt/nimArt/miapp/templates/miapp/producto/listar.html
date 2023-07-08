@@ -1,0 +1,80 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style1.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+
+{% block contenido %}
+{% load humanize %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="card">
+   
+    <div class="card-body">
+        <h1>Lista de productos</h1>
+        
+        <div class="table-responsive">
+           
+            <table class="table  table-bordered table-hover table-borderless ">
+             <thead class="table-dark">
+               <tr>
+                  <th style="text-align: center;">Nombre</th>
+                  <th style="text-align: center;">Precio</th>
+                  <th style="text-align: center;">Fecha</th>
+                  <th style="text-align: center;">Es nuevo?</th>
+                  <th style="text-align: center;">Opciones</th>
+        
+                  
+                </tr>
+              </thead>
+        
+              {% for p in productos %}
+              
+                <tr>
+                    <td>{{ p.nombre |title }}</td>
+                    <td>${{ p.precio | intcomma }}</td>
+                    <td>{{ p.fecha_fabricacion  }}</td>
+                    <td>
+                        {% if p.nuevo %}
+                        SI
+                        {% else %}
+                        NO
+                        {% endif %}
+                    </td>
+                    <td>
+                        
+                        <a href="{% url 'modificar_producto' p.id %}" class="btn btn-warning"><i class="fas fa-edit" ></i></a>
+                        <a href="{% url 'eliminar_producto' p.id %}" class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></a>
+                        
+                        
+                    </td>
+        
+                </tr>
+        
+              {% endfor %}
+           </table>
+           </div>
+           <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="{% url 'agregar_producto' %}" class="btn btn-success "><i class="fa fa-plus-square" ></i></a> 
+          </div>
+           
+        </div>
+        
+    </div>
+</div>
+
+<script src="{% static 'app/javascript/script.js' %}"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+{% endblock %}

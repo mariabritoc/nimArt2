@@ -1,0 +1,47 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style2.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <h1>Contáctanos</h1>
+    <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+    <span aria-hidden="true" class="breadcrumb__sep">/</span>
+    <span>Contáctanos</span>
+  </nav>
+
+  <div class="collection_sidebar">
+  </div>   
+
+<!--FORMULARIO-->
+  <section>
+    <form  id="formu" class="form jello-horizontal" method="post" action="">
+      <div class="form__container">
+        
+        {% csrf_token %}
+
+        {{ form }}
+          
+        <button class="form__cta" id="btnEnviar" type="submit">Enviar</button>
+        <br>
+
+        <button class="form__cta"  type="reset" value="Cancelar">Cancelar</button>
+      </div>
+    </form>
+    {{mensaje}}
+  </section>
+
+    
+   
+
+    <script script type="text/javascript" src="{% static 'app/js/formulario.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      
+{% endblock %}

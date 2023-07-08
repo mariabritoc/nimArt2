@@ -1,0 +1,46 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style2.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+
+
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <h1>Modificar producto</h1>
+    <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+    <span aria-hidden="true" class="breadcrumb__sep">/</span>
+    <span>Modificar</span>
+  </nav>
+
+  <div class="collection_sidebar">
+  </div>   
+
+
+<!--FORMULARIO-->
+  <section>
+    
+    <form  id="formu" class="form jello-horizontal" method="post" action="" enctype="multipart/form-data">
+      <div class="form__container">
+        <h2>Editar producto</h2>
+        
+        {% csrf_token %}
+
+        {{ form }}
+          
+        <button class="form__cta" id="btnEnviar" type="submit">Editar</button>
+        <br>
+        
+        <button class="form__cta"  type="button" onclick="goBack()" value="Cancelar">Cancelar</button>
+      </div>
+    </form>
+    {{mensaje}}
+  </section>
+
+  <script src="{% static 'app/javascript/atras.js' %}"></script>
+    
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style1.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <h1>Quienes somos</h1>
+    <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+    <span aria-hidden="true" class="breadcrumb__sep">/</span>
+    <span>Quienes somos</span>
+  </nav>
+
+  <div class="collection_sidebar">
+  </div>
+
+
+
+
+  <section>
+    <div class="container">
+      <div class="arroz">
+        
+        <div>
+            {% load static %}
+          <img src="{% static 'app/imagenes/duoc.jpg'%}" id="imgduoc" alt="Imagen" >
+        </div>
+        <h3>
+          Un poco de nosotros
+        </h3>
+        <p>
+          Somos estudiantes del segundo año de la carrera Ingenieria en Informatica. Como trabajo
+          semestral nos pidieron hacer una pagina web del tema que mas nos gustase y este fue el resultado.
+          <br>
+          Bienvenidos a nimArt una página web de arte, donde encontrarás una amplia variedad de obras de arte creadas
+          por artistas talentosos de todo el mundo. Desde pinturas y esculturas hasta fotografías y arte digital, nuestra
+          colección abarca una amplia gama de estilos y técnicas.
+          ¡Gracias por visitar nuestra página web de arte y esperamos que encuentres algo que te guste y te inspire!
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+{% endblock%}
