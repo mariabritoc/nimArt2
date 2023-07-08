@@ -1,2 +1,8 @@
 # nimArt2
 proyecto semestral
+
+
+CREDENCIALES ADMIN:
+
+USERNAME: ADMIN
+PASSWORD:B26751229-9m
