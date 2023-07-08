@@ -5,4 +5,4 @@ proyecto semestral
 CREDENCIALES ADMIN:
 
 USERNAME: ADMIN
-PASSWORD:
+PASSWORD: (profe pregunteme)
