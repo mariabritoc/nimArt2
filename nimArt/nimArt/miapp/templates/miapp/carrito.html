@@ -1,0 +1,50 @@
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px;">
+    <div role="alert">
+        <table class="table table-dark table-striped table-hovertable table-dark table-striped table-hover">
+            <thead>
+                <tr scope="row" class="text-center"><td colspan="4" style="font-weight: bold; font-size: 18px;" ><i class="fas fa-shopping-cart"></i>CARRITO </td></tr>
+                <td style="font-size: 15px; font-weight: bold;  text-align: center;">nombre</td>
+                <td style="font-size: 15px; font-weight: bold;  text-align: center;">descripcion</td>
+                <td style="font-size: 15px; font-weight: bold;  text-align: center;">precio</td>
+                <td style="font-size: 15px; font-weight: bold;  text-align: center;">cantidad</td>
+            </thead>
+            <tbody>
+                {% if request.session.carrito.items %}
+                    {% for key, value in request.session.carrito.items %}
+                        <tr>
+                            <td style="font: size 13px; text-align: center;">{{ value.nombre }}</td>
+                            <td style="font: size 13px; text-align: center;">{{ value.descripcion }}</td>
+                            <td style="font: size 13px; text-align: center;">{{ value.precio }}</td>
+                            <td style="font: size 13px; text-align: center;">{{ value.cantidad }}</td>
+                                <br>
+
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <th scope="row">Total: </th>
+                            <td colspan="4">$ {{ request.session.carrito.total }}</td>
+                        </tr>
+                
+                {% else %}
+                <tr>
+                    <td colspan="4">
+                        <div class="alert text-center" style="font-weight: bold;"> Sin productos</div>
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row text-center">
+        <div class="col-6">
+            <a href="{% url 'limpiar'%}" class="btn btn-outline-warning">Limpiar</a>
+
+        </div>
+        <div class="col-6">
+            <a href="{% url 'generarBoleta'%}" class="btn btn-outline-warning">Comprar</a>
+
+        </div>
+    
+
+    </div>
+</div>

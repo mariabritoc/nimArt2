@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d-flex {
+  position: absolute;
+  right: 20px;
+}
+
+.nav-link {
+  font-family: inherit;
+}
+
+html {
+  height: 100;
+}
+
+.logo{
+  height: 50px;
+  width: 60px;
+}
+
+.logo2{
+  height: 80px;
+  width: auto;
+}
+
+.breadcrumb {
+  color: #4a4a4a;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 60px 30px;
+  margin-top: 60px;
+}
+
+.link2{
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+.collection_sidebar {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Alinear las tarjetas a la izquierda */
+    margin: 0 auto;
+    max-width: 1200px; /* Ajusta el valor según tus necesidades */
+    margin-left: 10px; /* Ajusta el margen izquierdo según tus necesidades */
+  }
+
+.btn-primary,
+.btn {
+  background-color: #ffc107;
+  color: black;
+  border-color: 2px solid #ffc107;
+}
+
+.btn-primary:hover,
+.btn:hover {
+  background-color: #4a4a4a;
+  color: #ffc107;
+  font-weight: bolder;
+  border-color: 2px solid #4a4a4a;
+}
+
+.card {
+  margin-bottom: 10px;
+  text-align: center;
+  margin-right: 5px; /* Ajusta el valor de acuerdo a tus necesidades */
+  margin-left: 5px; /* Ajusta el valor de acuerdo a tus necesidades */
+  padding: 10px; /* Ajusta el valor de acuerdo a tus necesidades */
+  width: 100%;
+}
+
+.card-title {
+  text-align: center;
+  margin-bottom: var(--bs-card-title-spacer-y);
+  color: var(--bs-card-title-color);
+  font-weight: bolder;
+}
+
+.card-img-top {
+  height: 300px; /* Ajusta la altura deseada para la imagen */
+  object-fit: cover; /* Ajusta cómo se ajusta la imagen dentro del contenedor */
+  width: 100%;
+}
+
+.additional-element {
+    position: fixed;
+    top: 0;
+    right: 0; /* Alinea el elemento adicional a la derecha */
+    width:45%;
+    padding: 20px;
+    text-align: justify;
+    margin-top: 325px; /* Ajusta el margen superior según tus necesidades */
+    z-index: 1; /* Asegura que el elemento adicional esté por debajo de las tarjetas */
+  }
+  
+  
+
+.content {
+  min-height: calc(100% - 60px);
+  margin-bottom: 60px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo2{
+  height: 80px;
+  width: auto;
+}
+
+.link3 {
+  color: white;
+  text-decoration: none;
+}

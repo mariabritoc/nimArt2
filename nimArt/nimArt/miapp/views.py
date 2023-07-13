@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Producto, Usuario
+from .models import Producto, Usuario, Boleta, detalle_boleta
 from .forms import ContactoForm, ProductoForm, CustomUserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login 
+from .compra import carrito
+from django.views.generic import TemplateView
 # Create your views here.
 
 def home(request):
@@ -106,3 +108,73 @@ def pagina4(request):
 
 def pagina5(request):
     return render(request, 'miapp/pagina5.html')
+
+def agregar_producto_carrito(request, nombre):
+    carrito_compra = carrito(request)
+    producto = Producto.objects.get(nombre=nombre)
+    carrito_compra.agregar_producto(producto)
+    return redirect('tienda')
+
+def eliminar_producto_carrito(request,nombre):
+    carrito_compra= carrito(request)
+    producto = Producto.objects.get(nombre=nombre)
+    carrito_compra.eliminar(producto=producto)
+    return redirect('tienda')
+
+def restar_producto_carrito(request,nombre):
+    carrito_compra= carrito(request)
+    producto = Producto.objects.get(nombre=nombre)
+    carrito_compra.restar(producto=producto)
+    return redirect('tienda')
+
+def limpiar_producto_carrito(request):
+    carrito_compra= carrito(request)
+    carrito_compra.limpiar()
+    return redirect('tienda')
+
+def tienda(request):
+    productitos = Producto.objects.all()
+    datos={
+        'productitos': productitos
+    }
+    return render(request, 'miapp/tienda.html',datos)
+
+def ver_carrito(request):
+    return render(request, 'miapp/carrito.html')
+
+def generarBoleta(request):
+    carrito_compra = carrito(request)
+    precio_total = 0
+
+    for key, value in carrito_compra.carrito.items():
+        if isinstance(value, dict):
+            precio_total += int(value['precio']) * int(value['cantidad'])
+
+    boleta = Boleta(total=precio_total)
+    boleta.save()
+
+    productos = []
+    for key, value in carrito_compra.carrito.items():
+        if isinstance(value, dict):
+            producto = Producto.objects.get(nombre=value['nombre'])
+            cant = int(value['cantidad'])
+            subtotal = cant * int(value['precio'])
+            detalle = detalle_boleta(id_boleta=boleta, id_producto=producto, cantidad=cant, subtotal=subtotal)
+            productos.append(detalle)
+
+    detalle_boleta.objects.bulk_create(productos, ignore_conflicts=True)
+
+    datos = {
+        'productos': productos,
+        'fecha': boleta.fechaCompra,
+        'total': boleta.total  # Asegurarse de que boleta.total esté actualizado correctamente en el modelo
+    }
+
+    request.session['boleta'] = boleta.id_boleta
+    carrito_compra.limpiar()
+
+    return render(request, 'miapp/detallecarrito.html', datos)
+
+
+def detallecarrito(request):
+    return render(request, 'miapp/detallecarrito.html')

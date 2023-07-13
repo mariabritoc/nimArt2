@@ -1,0 +1,50 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/style1.css' %}">
+{% endblock %}
+
+{% block contenido %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container"  style="margin-bottom: 350px">
+        <h3>Detalle de Compra</h3>
+        <br>
+        <h6>Fecha: {{ fecha }}</h6>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código Boleta</th>
+                    <th>Código Producto</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in productos %}
+                <tr>
+                    <td>{{ prod.id_boleta.id_boleta }}</td>
+                    <td>{{ prod.id_producto.nombre }}</td>
+                    <td>{{ prod.cantidad }}</td>
+                    <td>{{ prod.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <h6>Total Compra: {{ total }}</h6>
+        <br>
+        {% if user.is_authenticated %}
+        <a class="nav-link" href="#">Nombre cliente: {{user.username}}</a>
+        {% endif %}
+    </div>
+
+    
+{% endblock %}

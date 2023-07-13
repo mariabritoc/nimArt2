@@ -1,0 +1,65 @@
+{% extends 'miapp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/style/tienda.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-D7jIQSKP7Xvi6E6IL03rMq5B5muEkQwqIRn8mJ61ekT0RpYHj+xh4YvFQ9QI3J3A" crossorigin="anonymous">
+{% endblock %}
+
+{% block contenido %}
+
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <h1>Tienda</h1>
+    <a href="{% url 'home' %}" title="Volver a la portada" class="link2">Inicio</a>
+    <span aria-hidden="true" class="breadcrumb__sep">/</span>
+    <span>Tienda</span>
+</nav>
+
+<div class="collection_sidebar">
+</div>
+
+<div class="container cards-container" >
+    <div class="row g-3">
+        <div class="col-8">
+            <div class="row" style="padding: 5px 0;">
+                <div class="col-12">
+                    <div class="row">
+                        {% for producto in productitos %}
+                        <div class="col-12 col-lg-6">
+                            <div class="card ">
+                                {% if producto.imagen %}
+                                <img src="{{ producto.imagen.url }} " class="card-img-top mx-auto">
+                                {% else %}
+                                    <img src="{% static 'app/imagenes/lienzonegro.jpg'%}" class="card-img-top mx-auto">
+                                {% endif %}
+                            
+                                <div class="card-body">
+                                    <h5 class="card-title" style="font-weight: bold;"> Nombre: {{ producto.nombre }}</h5>
+                                    <p  class="card-text">
+                                        descripcion: {{ producto.descripcion }}<br>
+                                        precio: {{ producto.precio }}<br>
+
+                                    </p>
+                                    
+                                    <a href="{% url 'agregar_producto_carrito' producto.nombre|urlencode %}" class="btn btn-outline-warning">Agregar al carro</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="additional-element">
+            {% include "miapp/carrito.html" %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
